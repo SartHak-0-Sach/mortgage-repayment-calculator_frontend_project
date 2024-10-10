@@ -2,60 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Mortgage repayment calculator</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Mortgage repayment calculator</title>
+
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+   
   </style>
 </head>
 <body>
+  <article class="container">
+    
+    <form action="" class="section-one">
+      <header>
+        
+            <h2>Mortgage Calculator</h2>
+          <p class="reset-button"
+          onclick="resetButton()"
+        >
+          Clear All
+        </p>
+      </header>
 
-  Mortgage Calculator
-  Clear All
+      <div class="amount-box input-box">
+        <label for="amount">Mortgage Amount</label>
+        <div class="input-section">
+          <span>£</span>
+          <input type="number" name="amount" id="amount" class="amount inputcolumn" pattern="[0-9]*" required>
+          </div>
+      </div>
+      
+      <span class="input-term-rate">
+        <div class="term-box input-box">
+          <label for="term">Mortgage Term</label><br>
+          <div class="input-section input-section-term">
+            <input type="number" name="term" id="term" class="term inputcolumn" pattern="[0-9]*" required><span>years</span>
+          </div>
+        </div>
+  
+        <div class="rate-box input-box">
+          <label for="rate">Interest Rate</label><br>
+          <div class="input-section input-section-rate">
+            <input type="number" class="rate inputcolumn" id="rate" name="rate" pattern="[0-9]*" required><span>%</span>
+          </div>
+        </div>
+      </span>
+      
 
-  Mortgage Amount
+      <div class="radio-box">
+        <label for="Mortgage-type-radio">Mortgage Type</label>
 
-  Mortgage Term
+        <div class="radio-input">
+          <input type="radio" name="Mortgage-type-radio" class="radio-button repayment-radio" id="repayment-radio">
+          <label for="repayment-radio">Repayment</label>
+        </div>
 
-  Interest Rate
+        <div class="radio-input">
+          <input type="radio" name="Mortgage-type-radio" class="radio-button interest-radio" id="Interest-radio"><label for="Interest-radio">Interest Only</label>
+        </div>
+        
+      </div>
 
-  Mortgage Type
-  Repayment
-  Interest Only
+      <div>
+        <button type='button' class="submit-button"
+        onclick=" resultDisplayToggle();"
+        ><img src="./assets/images/icon-calculator.svg" alt="">Calculate Repayments</button>
+      </div>
+    </form>
 
-  Calculate Repayments
+ 
+    <section class="section-two">
+    
+      <img src="./assets/images/illustration-empty.svg" alt="">
 
-  <!-- Empty results start -->
+      <h3>Results shown here</h3>
+      <p>Complete the form and click “calculate repayments” to see what 
+        your monthly repayments would be.</p>
+ 
 
-  Results shown here
 
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-  <!-- Empty results end -->
-
-  <!-- Completed results start -->
-
-  Your results
-
-  Your results are shown below based on the information you provided. 
-  To adjust the results, edit the form and click “calculate repayments” again.
-
-  Your monthly repayments
-
-  Total you'll repay over the term
-
-  <!-- Completed results end -->
+    </section>
+ 
+ </section>
+      
+</article>
   
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/SartHak-0-Sach">Sarthak Sachdev</a>.
   </div>
+  <script src="calculator.js"></script>
 </body>
 </html>
